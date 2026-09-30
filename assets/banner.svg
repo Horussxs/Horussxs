@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#05030f"/>
+      <stop offset="0.5" stop-color="#1e1146"/>
+      <stop offset="1" stop-color="#05030f"/>
+    </linearGradient>
+    <linearGradient id="txt" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#22d3ee"><animate attributeName="stop-color" values="#22d3ee;#a78bfa;#f472b6;#22d3ee" dur="6s" repeatCount="indefinite"/></stop>
+      <stop offset="0.5" stop-color="#a78bfa"><animate attributeName="stop-color" values="#a78bfa;#f472b6;#22d3ee;#a78bfa" dur="6s" repeatCount="indefinite"/></stop>
+      <stop offset="1" stop-color="#f472b6"><animate attributeName="stop-color" values="#f472b6;#22d3ee;#a78bfa;#f472b6" dur="6s" repeatCount="indefinite"/></stop>
+    </linearGradient>
+    <radialGradient id="orb1"><stop offset="0" stop-color="#7c3aed" stop-opacity="0.9"/><stop offset="1" stop-color="#7c3aed" stop-opacity="0"/></radialGradient>
+    <radialGradient id="orb2"><stop offset="0" stop-color="#22d3ee" stop-opacity="0.7"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/></radialGradient>
+    <radialGradient id="orb3"><stop offset="0" stop-color="#f472b6" stop-opacity="0.7"/><stop offset="1" stop-color="#f472b6" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#a78bfa" stroke-opacity="0.10"/>
+      <animateTransform attributeName="patternTransform" type="translate" from="0 0" to="40 0" dur="4s" repeatCount="indefinite"/>
+    </pattern>
+    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="clip"><rect width="1000" height="300" rx="18"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#clip)">
+    <rect width="1000" height="300" fill="url(#bg)"/>
+    <rect width="1000" height="300" fill="url(#grid)"/>
+
+    <!-- orbes flotantes -->
+    <circle cx="180" cy="90" r="190" fill="url(#orb1)"><animate attributeName="cx" values="180;320;180" dur="9s" repeatCount="indefinite"/><animate attributeName="cy" values="90;170;90" dur="11s" repeatCount="indefinite"/></circle>
+    <circle cx="820" cy="210" r="170" fill="url(#orb2)"><animate attributeName="cx" values="820;680;820" dur="10s" repeatCount="indefinite"/><animate attributeName="cy" values="210;110;210" dur="8s" repeatCount="indefinite"/></circle>
+    <circle cx="520" cy="290" r="150" fill="url(#orb3)"><animate attributeName="cx" values="520;640;400;520" dur="13s" repeatCount="indefinite"/></circle>
+
+    <!-- estrellas -->
+    <g fill="#fff">
+      <circle cx="80" cy="50" r="2"><animate attributeName="opacity" values="0.1;1;0.1" dur="2.2s" repeatCount="indefinite"/></circle>
+      <circle cx="260" cy="240" r="1.5"><animate attributeName="opacity" values="1;0.1;1" dur="3s" repeatCount="indefinite"/></circle>
+      <circle cx="430" cy="40" r="2"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.7s" repeatCount="indefinite"/></circle>
+      <circle cx="610" cy="250" r="1.8"><animate attributeName="opacity" values="1;0.1;1" dur="2.4s" repeatCount="indefinite"/></circle>
+      <circle cx="760" cy="60" r="2"><animate attributeName="opacity" values="0.1;1;0.1" dur="3.4s" repeatCount="indefinite"/></circle>
+      <circle cx="930" cy="140" r="1.6"><animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/></circle>
+      <circle cx="40" cy="220" r="1.6"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.1s" repeatCount="indefinite"/></circle>
+      <circle cx="880" cy="270" r="2"><animate attributeName="opacity" values="1;0.1;1" dur="2.6s" repeatCount="indefinite"/></circle>
+    </g>
+
+    <!-- particulas que suben -->
+    <g fill="#c4b5fd">
+      <circle cx="150" cy="300" r="3"><animate attributeName="cy" values="310;-10" dur="7s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="7s" repeatCount="indefinite"/></circle>
+      <circle cx="350" cy="300" r="2"><animate attributeName="cy" values="310;-10" dur="5s" begin="1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="5s" begin="1s" repeatCount="indefinite"/></circle>
+      <circle cx="560" cy="300" r="3"><animate attributeName="cy" values="310;-10" dur="8s" begin="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="8s" begin="2s" repeatCount="indefinite"/></circle>
+      <circle cx="740" cy="300" r="2"><animate attributeName="cy" values="310;-10" dur="6s" begin="0.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="6s" begin="0.5s" repeatCount="indefinite"/></circle>
+      <circle cx="900" cy="300" r="3"><animate attributeName="cy" values="310;-10" dur="7.5s" begin="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="7.5s" begin="3s" repeatCount="indefinite"/></circle>
+    </g>
+
+    <!-- simbolos de codigo flotantes -->
+    <g font-family="Consolas, 'Courier New', monospace" font-size="34" fill="#a78bfa" fill-opacity="0.35">
+      <text x="70" y="150">&lt;/&gt;<animate attributeName="y" values="150;130;150" dur="5s" repeatCount="indefinite"/></text>
+      <text x="880" y="90">{ }<animate attributeName="y" values="90;112;90" dur="6s" repeatCount="indefinite"/></text>
+      <text x="900" y="250">;<animate attributeName="y" values="250;232;250" dur="4s" repeatCount="indefinite"/></text>
+      <text x="40" y="270">#<animate attributeName="y" values="270;250;270" dur="4.5s" repeatCount="indefinite"/></text>
+    </g>
+
+    <!-- titulo -->
+    <g text-anchor="middle" filter="url(#glow)">
+      <text x="500" y="152" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-weight="800" font-size="92" letter-spacing="8" fill="url(#txt)">HORUSSXS</text>
+    </g>
+    <text x="500" y="200" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="24" fill="#e9d5ff" letter-spacing="3">&lt; Web Developer /&gt;  ·  Creative Coder</text>
+
+    <!-- linea de escaneo -->
+    <rect x="-200" y="228" width="200" height="3" fill="url(#txt)" opacity="0.9">
+      <animate attributeName="x" values="-200;1000" dur="3.5s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- cursor -->
+    <rect x="500" y="248" width="14" height="4" fill="#a78bfa">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <rect x="1.5" y="1.5" width="997" height="297" rx="17" fill="none" stroke="url(#txt)" stroke-width="2" opacity="0.7"/>
+</svg>
